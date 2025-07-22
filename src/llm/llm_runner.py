@@ -3,7 +3,7 @@ import json
 
 # Load Qwen2.5-0.5B (quantized GGUF model)
 llm = Llama(
-    model_path="models/qwen2.5-0.5b.Q4_K_M.gguf",
+    model_path="./models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
     n_ctx=2048,
     n_threads=4,
     verbose=False
