@@ -1,9 +1,5 @@
 # Adobe Round 1a: Understand Your Document - Solution
 
-## Overview
-
-This solution extracts **titles** and **hierarchical outlines** from PDF documents using the `PyMuPDF` (`fitz`) library — without relying on external APIs or large models.
-
 ---
 ## Execution
 ### Build Docker image:
