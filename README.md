@@ -1,93 +1,98 @@
-# Challenge 1b: Multi-Collection PDF Analysis
+# Adobe Round 1a: Understand Your Document - Solution
 
 ## Overview
-Advanced PDF analysis solution that processes multiple document collections and extracts relevant content based on specific personas and use cases.
 
-## Project Structure
-```
-Challenge_1b/
-├── Collection 1/                    # Travel Planning
-│   ├── PDFs/                       # South of France guides
-│   ├── challenge1b_input.json      # Input configuration
-│   └── challenge1b_output.json     # Analysis results
-├── Collection 2/                    # Adobe Acrobat Learning
-│   ├── PDFs/                       # Acrobat tutorials
-│   ├── challenge1b_input.json      # Input configuration
-│   └── challenge1b_output.json     # Analysis results
-├── Collection 3/                    # Recipe Collection
-│   ├── PDFs/                       # Cooking guides
-│   ├── challenge1b_input.json      # Input configuration
-│   └── challenge1b_output.json     # Analysis results
-└── README.md
-```
+This solution extracts **titles** and **hierarchical outlines** from PDF documents using the `PyMuPDF` (`fitz`) library — without relying on external APIs or large models.
 
-## Collections
+---
+## Execution
+### Build Docker image:
+`docker build --platform linux/amd64 -t startersnsides:latest .`
+### Run Docker container:
+`docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none startersnsides:latest`
 
-### Collection 1: Travel Planning
-- **Challenge ID**: round_1b_002
-- **Persona**: Travel Planner
-- **Task**: Plan a 4-day trip for 10 college friends to South of France
-- **Documents**: 7 travel guides
+---
+## Key Components
 
-### Collection 2: Adobe Acrobat Learning
-- **Challenge ID**: round_1b_003
-- **Persona**: HR Professional
-- **Task**: Create and manage fillable forms for onboarding and compliance
-- **Documents**: 15 Acrobat guides
+### 1. Libraries Used
 
-### Collection 3: Recipe Collection
-- **Challenge ID**: round_1b_001
-- **Persona**: Food Contractor
-- **Task**: Prepare vegetarian buffet-style dinner menu for corporate gathering
-- **Documents**: 9 cooking guides
+- **PyMuPDF (fitz)** – Core PDF processing library  
+- **jsonschema** – JSON validation  
+- **typing** – Type annotations  
+- **logging** – Structured logging  
 
-## Input/Output Format
+### 2. Core Class
 
-### Input JSON Structure
-```json
-{
-  "challenge_info": {
-    "challenge_id": "round_1b_XXX",
-    "test_case_name": "specific_test_case"
-  },
-  "documents": [{"filename": "doc.pdf", "title": "Title"}],
-  "persona": {"role": "User Persona"},
-  "job_to_be_done": {"task": "Use case description"}
-}
-```
+#### `PDFOutlineExtractor`
 
-### Output JSON Structure
-```json
-{
-  "metadata": {
-    "input_documents": ["list"],
-    "persona": "User Persona",
-    "job_to_be_done": "Task description"
-  },
-  "extracted_sections": [
-    {
-      "document": "source.pdf",
-      "section_title": "Title",
-      "importance_rank": 1,
-      "page_number": 1
-    }
-  ],
-  "subsection_analysis": [
-    {
-      "document": "source.pdf",
-      "refined_text": "Content",
-      "page_number": 1
-    }
-  ]
-}
-```
+Main class handling all extraction logic with these key methods:
 
-## Key Features
-- Persona-based content analysis
-- Importance ranking of extracted sections
-- Multi-collection document processing
-- Structured JSON output with metadata
+- `def extract_title(self, doc)`  
+  → Extracts the document's title  
+- `def extract_outline(self, pdf_path)`  
+  → Full document outline pipeline  
+- `def detect_heading_level(self, ...)`  
+  → Classifies headings as H1, H2, or H3  
 
 ---
 
-**Note**: This README provides a brief overview of the Challenge 1b solution structure based on available sample data. 
+## Extraction Strategy
+
+### 1. Title Extraction
+
+Analyzes the **first page content** and identifies text with:
+
+- **Largest font size**
+- Located in **top half**
+- Font size > **24pt**
+- **Merges overlapping text fragments**
+
+### 2. Outline Extraction
+
+Uses a multi-stage approach:
+
+#### ➤ Table of Contents Detection
+
+- Checks for **built-in PDF TOC**
+- Searches for **manual TOC pages**
+- Parses entries using regex patterns
+
+#### ➤ Content Analysis Fallback
+
+If no TOC is found:
+
+- Calculates **average font size**
+- Detects headings based on:
+  - **Font size ratio**
+  - **Bold/italic** formatting
+  - **Position on page**
+  - **Text patterns** (e.g., numbered lists)
+- Validates heading **hierarchy**
+
+### 3. Heading Classification
+
+Determines heading levels using:
+
+- Font size comparison
+- Numbering patterns (`1.`, `1.1`, etc.)
+- Text formatting (bold/italic)
+- Indentation
+- Relative position context
+
+---
+
+## Processing Pipeline
+
+```mermaid
+graph TD
+    A[Input PDF] --> B[Extract Title]
+    A --> C[Detect TOC]
+    C -->|Found| D[Parse TOC]
+    C -->|Not Found| E[Content Analysis]
+    E --> F[Detect Headings]
+    F --> G[Validate Hierarchy]
+    D --> G
+    B --> H[Final JSON]
+    G --> H
+```
+---
