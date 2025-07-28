@@ -5,7 +5,8 @@
 This document retrieval system implements a sophisticated hybrid approach combining BM25 (Bag of Words) and sentence embeddings to provide highly relevant document sections based on user queries. The system is designed to handle diverse domains including travel planning, research analysis, business documentation, and culinary content.
 
 > [!WARNING]
-> Make sure Internet is present during the Docker Build stage, as the embedding model has to be downloaded for hybrd retrieval system.
+> Make sure Internet is present during the Docker Build stage, as the embedding model has to be downloaded for hybrd retrieval system, else the engine falls back to BM25 only implementation.
+
 ## Methodology
 
 ### 1. Document Processing Pipeline
