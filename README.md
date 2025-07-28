@@ -19,9 +19,10 @@
   - **Collection 1** (7 PDFs): <20 seconds
   - **Collection 2** (15 PDFs): <45 seconds  
   - **Collection 3** (9 PDFs): <40 seconds
-- Domain detection accuracy: ~95%
-- Query expansion coverage: ~80%
-- Result diversity: >90% unique documents
+- **Domain detection accuracy**: ~95%
+- **Query expansion coverage**: ~80%
+- **Result diversity**: >90% unique documents
+- **Model size (Embedding Model)**: 69.6MB
   
 ## 📁 File Structure
 
@@ -44,13 +45,13 @@ StartersNSides-1B/
 ### For Docker (Recommended)
 - Docker installed on your system
 - At least 4GB RAM available for Docker
-- 2GB free disk space
+- 1GB free disk space
 
 ### For Local Development
 - Python 3.10 or higher
 - pip package manager
 - At least 4GB RAM
-- 2GB free disk space
+- 1GB free disk space
 
 ## Execution
 
