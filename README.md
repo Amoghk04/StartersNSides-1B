@@ -101,6 +101,7 @@ cd /path/to/StartersNSides-1B
 # Build the Docker image
 docker build -t hybrid-retrieval-system .
 ```
+- The build takes about 700 seconds to build.
 
 ### 2. Run with Input Data
 
