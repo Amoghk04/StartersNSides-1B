@@ -7,7 +7,7 @@
 - **rank_bm25**: Using BM25 semantic search
 - **scikit-learn**: For calculating cosine similarity
 
-## Key Features and Mterics:
+## Key Features and Metrics:
 - Hybrid BM25 + Sentence Embeddings approach
 - Domain-specific parameter tuning
 - Multi-field scoring with heading emphasis
@@ -16,9 +16,9 @@
 - No usage of Language Models
 - Eliminated Internet/API calls usage
 - Based on given Test Collections:
-  - **Collection 1** (7 PDFs): ~25 seconds
-  - **Collection 2** (15 PDFs): ~45 seconds  
-  - **Collection 3** (9 PDFs): ~35 seconds
+  - **Collection 1** (7 PDFs): <20 seconds
+  - **Collection 2** (15 PDFs): <45 seconds  
+  - **Collection 3** (9 PDFs): <40 seconds
 - Domain detection accuracy: ~95%
 - Query expansion coverage: ~80%
 - Result diversity: >90% unique documents
@@ -144,6 +144,12 @@ docker run --rm \
   hybrid-retrieval-system \
   python src/run_pipeline.py --input /app/input/custom_input.json --output /app/output/custom_output.json
 ```
+
+### Troubeshooting
+#### Issue:
+`PermissionError: [Errno 13] Permission denied: '/app/output/output.json'`
+- If there already exists a directory named "output" in the root, please remove it.
+
 ## Input/Output Format
 
 ### Input
@@ -183,7 +189,6 @@ docker run --rm \
   ]
 }
 ```
-
 ## System Architecture
 ```mermaid
 ---
