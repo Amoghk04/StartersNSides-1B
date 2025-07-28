@@ -1,11 +1,19 @@
 # Adobe Round 1b: Persona-Driven Document Intelligence - Solution
 
 ## Libraries Used
+- **NumPy**: 1.24.3 (numerical computations)
+- **scikit-learn**: 1.3.0 (cosine similarity, utilities)
+- **PyTorch**: 2.0.1 CPU version (embedding model backend)
+- **transformers**: 4.35.2 (sentence transformer models)
+- **sentence-transformers**: 2.5.1 (embedding generation)
+- **rank-bm25**: 0.2.2 (BM25 implementation)
+- **PyMuPDF**: 1.23.8 (PDF processing)
 
-- **PyMuPDF (fitz)**: PDF processing
-- **sentence-transformers**: Text embedding model paraphrase-MiniLM-L3-v2
-- **rank_bm25**: Using BM25 semantic search
-- **scikit-learn**: For calculating cosine similarity
+## System Requirements
+- **Python**: 3.10+ (type hints, modern features)
+- **Memory**: 200-400MB recommended for large collections
+- **Storage**: 500MB for models and temporary files
+- **Network**: Initial model download (~70MB)
 
 ## Key Features and Metrics:
 - Hybrid BM25 + Sentence Embeddings approach
@@ -451,22 +459,7 @@ hybrid_score = (bm25_weight * normalized_bm25_score) +
 - **Model Swapping**: Pluggable embedding models
 - **Collection Handling**: Efficient processing of large document sets
 
-### Technical Dependencies and Versions
 
-**Core ML Stack:**
-- **NumPy**: 1.24.3 (numerical computations)
-- **scikit-learn**: 1.3.0 (cosine similarity, utilities)
-- **PyTorch**: 2.0.1 CPU version (embedding model backend)
-- **transformers**: 4.35.2 (sentence transformer models)
-- **sentence-transformers**: 2.5.1 (embedding generation)
-- **rank-bm25**: 0.2.2 (BM25 implementation)
-- **PyMuPDF**: 1.23.8 (PDF processing)
-
-**System Requirements:**
-- **Python**: 3.10+ (type hints, modern features)
-- **Memory**: 200-400MB recommended for large collections
-- **Storage**: 500MB for models and temporary files
-- **Network**: Initial model download (~70MB)
 
 This implementation provides a robust, efficient, and scalable solution for persona-driven document intelligence with strong performance across diverse domains and document types.
  
