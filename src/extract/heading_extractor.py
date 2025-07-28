@@ -1,5 +1,3 @@
-import os
-import time
 import re
 from pathlib import Path
 from typing import List, Dict, Any, Optional
@@ -172,42 +170,3 @@ class PDFHeadingExtractor:
         except Exception as e:
             logger.error(f"Error processing {pdf_path}: {e}")
             return []
-
-
-def process_pdfs():
-    """Process PDFs and output only headings."""
-    logger.info("Starting PDF heading extraction")
-    
-    # Flexible path handling
-    input_dir = Path("../../Challenge_1b/Collection_1/PDFs/")
-    logger.info(f"Input directory: {input_dir.resolve()}")
-    
-    # Initialize extractor
-    extractor = PDFHeadingExtractor()
-    
-    # Get all PDF files
-    pdf_files = list(input_dir.glob("*.pdf"))
-    
-    if not pdf_files:
-        logger.warning(f"No PDF files found in {input_dir}")
-        return
-    
-    logger.info(f"Found {len(pdf_files)} PDF files to process")
-    
-    for pdf_file in pdf_files:
-        try:
-            # Extract headings
-            headings = extractor.extract_headings(str(pdf_file))
-            
-            print(f"\n=== HEADINGS FROM {pdf_file.name} ===")
-            for heading in headings:
-                print(heading)
-            
-            logger.info(f"✅ {pdf_file.name} - found {len(headings)} headings")
-            
-        except Exception as e:
-            logger.error(f"❌ Failed to process {pdf_file.name}: {e}")
-
-
-if __name__ == "__main__":
-    process_pdfs()

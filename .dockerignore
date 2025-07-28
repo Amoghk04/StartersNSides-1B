@@ -1,0 +1,46 @@
+# Git files
+.git/
+.gitignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+test_*.py
+*_test.py
+
+# Temporary files
+*.tmp
+*.log
+
+# Output files (will be generated in container)
+src/output/output.json
+
+# Large model files (will be downloaded in container)
+*.gguf
+*.bin
+*.safetensors 
