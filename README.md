@@ -93,6 +93,10 @@ python run_pipeline.py --input ../Challenge_1b/Collection_3/challenge1b_input.js
 ```
 
 ### Docker Execution
+
+> [!WARNING]
+> Make sure Internet is present during the Docker Build stage, as the embedding model has to be downloaded for hybrd retrieval system, else the engine falls back to BM25 only implementation.
+
 ### 1. Build the Docker Image
 
 ```bash
