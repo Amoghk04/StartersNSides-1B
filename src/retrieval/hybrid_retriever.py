@@ -7,7 +7,7 @@ import numpy as np
 from difflib import SequenceMatcher
 
 class HybridRetriever:
-    def __init__(self, domain: Optional[str] = None, embedding_model: str = "all-MiniLM-L6-v2"):
+    def __init__(self, domain: Optional[str] = None, embedding_model: str = "all-MiniLM-L3-v2"):
         """
         Hybrid retriever combining BM25 and sentence embeddings
         
@@ -319,10 +319,10 @@ class HybridRetriever:
             'top_chunks': top_chunks,
             'all_bm25_scores': bm25_scores,
             'all_embedding_scores': embedding_scores,
-            'embedding_model': 'all-MiniLM-L6-v2' if self.embedding_model else None
+            'embedding_model': 'paraphrase-MiniLM-L3-v2' if self.embedding_model else None
         }
 
-def build_hybrid_index(chunks: List[Dict[str, Any]], domain: Optional[str] = None, embedding_model: str = "all-MiniLM-L6-v2") -> HybridRetriever:
+def build_hybrid_index(chunks: List[Dict[str, Any]], domain: Optional[str] = None, embedding_model: str = "paraphrase-MiniLM-L3-v2") -> HybridRetriever:
     """Build hybrid BM25 + embeddings index from chunks"""
     retriever = HybridRetriever(domain, embedding_model)
     retriever.build_index(chunks)

@@ -25,7 +25,7 @@ The core innovation lies in the hybrid retrieval approach that leverages both sp
 - Multi-field scoring that weights headings more heavily than body content
 
 **Sentence Embeddings Component (Dense Retrieval)**:
-- Uses SentenceTransformer (all-MiniLM-L6-v2) for semantic understanding
+- Uses SentenceTransformer (all-MiniLM-L3-v2) for semantic understanding
 - Computes cosine similarity between query and document embeddings
 - Captures semantic relationships and conceptual similarities
 

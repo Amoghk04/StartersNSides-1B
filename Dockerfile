@@ -16,21 +16,16 @@ RUN apt-get update && apt-get install -y \
 # Copy requirements first for better Docker layer caching
 COPY requirements.txt .
 
-# Install Python dependencies in specific order to avoid conflicts
+RUN mkdir -p /output && chmod 777 /output
+# Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir numpy==1.24.3 && \
-    pip install --no-cache-dir scikit-learn==1.3.0 && \
-    pip install --no-cache-dir torch>=1.9.0 && \
-    pip install --no-cache-dir huggingface-hub>=0.19.0 && \
-    pip install --no-cache-dir transformers>=4.30.0 && \
-    pip install --no-cache-dir sentence-transformers>=2.5.1 && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt
+
+# Download the embedding model at build time
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('paraphrase-MiniLM-L3-v2')"
 
 # Copy the source code
 COPY src/ ./src/
-
-# Create necessary directories
-RUN mkdir -p src/output src/data
 
 # Set environment variables
 ENV PYTHONPATH=/app/src

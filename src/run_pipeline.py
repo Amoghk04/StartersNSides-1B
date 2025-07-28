@@ -32,6 +32,7 @@ def main():
     output_path = Path(args.output)
     pdf_dir = Path(os.path.join(os.path.dirname(input_path), "PDFs"))
 
+    # Ensure output directory exists
     ensure_dir(output_path.parent)
 
     start_time = time.time()

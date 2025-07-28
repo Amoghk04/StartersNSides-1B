@@ -26,7 +26,7 @@ This document provides comprehensive instructions for running the Hybrid BM25 + 
 cd /path/to/StartersNSides-1B
 
 # Build the Docker image
-docker build -t hybrid-retrieval-system .
+docker build -t startersnsides:latest .
 ```
 
 ### 2. Run with Input Data
@@ -34,9 +34,10 @@ docker build -t hybrid-retrieval-system .
 ```bash
 # Run the system with your input data
 docker run --rm \
-  -v $(pwd)/your_data_folder:/app/input \
+  -v $(pwd)/input:/app/input \
   -v $(pwd)/output:/app/output \
-  hybrid-retrieval-system
+  --network none \
+  startersnsides:latest
 ```
 
 ### 3. Example with Collection Data
@@ -46,19 +47,22 @@ docker run --rm \
 docker run --rm \
   -v $(pwd)/Challenge_1b/Collection_1:/app/input \
   -v $(pwd)/output:/app/output \
-  hybrid-retrieval-system
+  --network none \
+  startersnsides:latest
 
 # Run with Collection 2 (Adobe Acrobat guides)
 docker run --rm \
   -v $(pwd)/Challenge_1b/Collection_2:/app/input \
   -v $(pwd)/output:/app/output \
-  hybrid-retrieval-system
+  --network none \
+  startersnsides:latest
 
 # Run with Collection 3 (Culinary recipes)
 docker run --rm \
   -v $(pwd)/Challenge_1b/Collection_3:/app/input \
   -v $(pwd)/output:/app/output \
-  hybrid-retrieval-system
+  --network none \
+  startersnsides:latest
 ```
 
 ### 4. Custom Input/Output Paths
@@ -68,7 +72,8 @@ docker run --rm \
 docker run --rm \
   -v $(pwd)/myjob:/app/input \
   -v $(pwd)/myoutput:/app/output \
-  hybrid-retrieval-system \
+  --network none \
+  startersnsides:latest \
   python src/run_pipeline.py --input /app/input/custom_input.json --output /app/output/custom_output.json
 ```
 
@@ -112,7 +117,18 @@ python run_pipeline.py --input ../Challenge_1b/Collection_3/challenge1b_input.js
 
 ## Input Format
 
-The system expects input JSON files in the following format:
+### Directory Structure
+```
+input/
+├── challenge1b_input.json
+└── PDFs/
+    ├── document1.pdf
+    ├── document2.pdf
+    └── ...
+```
+
+### JSON Input Format
+The `challenge1b_input.json` file should contain:
 
 ```json
 {
