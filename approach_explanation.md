@@ -71,4 +71,22 @@ This hybrid approach provides several key benefits:
 4. **Scalability**: Efficient processing suitable for large document collections
 5. **Interpretability**: Detailed scoring breakdowns for analysis and debugging
 
+## Key Innovations
+
+1. **Hybrid Scoring**: Combines BM25 and embeddings with domain-specific weights
+2. **Domain Awareness**: Automatic detection and optimization per domain
+3. **Query Enhancement**: Intelligent synonym expansion
+4. **Result Diversity**: Prevents redundant results
+5. **Robust Fallback**: Graceful degradation if embeddings fail
+6. **Performance Optimization**: Batch processing and caching
+
+## Future Enhancements
+
+- Additional embedding models
+- Real-time query processing
+- Web interface for interactive use
+- API endpoints for integration
+- Advanced caching strategies
+
+
 The system achieves high relevance through intelligent combination of traditional information retrieval techniques with modern neural embeddings, providing both precision and recall across diverse document types and user intents. 
