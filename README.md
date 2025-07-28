@@ -3,7 +3,7 @@
 ## Libraries Used
 
 - **PyMuPDF (fitz)**: PDF processing
-- **sentence-transformers**: Text embeddings
+- **sentence-transformers**: Text embedding model paraphrase-MiniLM-L3-v2
 - **rank_bm25**: Using BM25 semantic search
 - **scikit-learn**: For calculating cosine similarity
 
