@@ -292,3 +292,10 @@ flowchart TD
     L_R_F_0@{ animation: fast }
 
 ```
+
+## Other Possible Solutions Tried
+
+1. Creation of RAG pipeline using Small Language Model (SLM)
+  - This method involved all-MiniLM-L6-v2 embedding model along with Qwen2.5-0.5B for Small Language Model RAG pipeline.
+  - We did not move forward with this method, because of difficulty in JSON formatting, and also receiving wrong output.
+ 
