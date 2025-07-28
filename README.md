@@ -424,7 +424,7 @@ hybrid_score = (bm25_weight * normalized_bm25_score) +
 - **Relevance Scoring**: Hybrid approach improves over single methods by 15-25%
 
 #### 3. Resource Usage
-- **Memory**: Peak usage ~500MB for largest collections
+- **Memory**: Peak usage ~400MB for largest collections
 - **CPU**: Efficient multi-threading for I/O operations
 - **Storage**: Minimal temporary storage requirements
 - **Model Size**: 69.6MB embedding model (optimized for speed)
@@ -460,7 +460,7 @@ hybrid_score = (bm25_weight * normalized_bm25_score) +
 
 **System Requirements:**
 - **Python**: 3.10+ (type hints, modern features)
-- **Memory**: 1GB recommended for large collections
+- **Memory**: 200-400MB recommended for large collections
 - **Storage**: 500MB for models and temporary files
 - **Network**: Initial model download (~70MB)
 
