@@ -112,6 +112,7 @@ docker run --rm \
   -v $(pwd)/output:/app/output \
   hybrid-retrieval-system
 ```
+- The input folder must contain a JSON named `challenge1b_input.json` and a PDF folder named `PDFs`.
 
 ### 3. Example with Collection Data
 
@@ -190,6 +191,8 @@ docker run --rm \
   ]
 }
 ```
+
+- We have provided an example output JSON file for your reference in the <a href="./output">`output`</a> directory.
 ## System Architecture
 ```mermaid
 ---
