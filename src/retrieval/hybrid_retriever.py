@@ -7,7 +7,7 @@ import numpy as np
 from difflib import SequenceMatcher
 
 class HybridRetriever:
-    def __init__(self, domain: Optional[str] = None, embedding_model: str = "all-MiniLM-L3-v2"):
+    def __init__(self, domain: Optional[str] = None, embedding_model: str = "paraphrase-MiniLM-L3-v2"):
         """
         Hybrid retriever combining BM25 and sentence embeddings
         
