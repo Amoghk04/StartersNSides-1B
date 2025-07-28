@@ -1,77 +1,75 @@
 {
   "metadata": {
     "input_documents": [
-      "Breakfast Ideas.pdf",
-      "Dinner Ideas - Mains_1.pdf",
-      "Dinner Ideas - Mains_2.pdf",
-      "Dinner Ideas - Mains_3.pdf",
-      "Dinner Ideas - Sides_1.pdf",
-      "Dinner Ideas - Sides_2.pdf",
-      "Dinner Ideas - Sides_3.pdf",
-      "Dinner Ideas - Sides_4.pdf",
-      "Lunch Ideas.pdf"
+      "South of France - Cities.pdf",
+      "South of France - Cuisine.pdf",
+      "South of France - History.pdf",
+      "South of France - Restaurants and Hotels.pdf",
+      "South of France - Things to Do.pdf",
+      "South of France - Tips and Tricks.pdf",
+      "South of France - Traditions and Culture.pdf"
     ],
-    "persona": "Food Contractor",
-    "job_to_be_done": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items.",
-    "processing_timestamp": "2025-07-28T09:06:36.383239+00:00"
+    "persona": "Travel Planner",
+    "job_to_be_done": "Plan a trip of 4 days for a group of 10 college friends.",
+    "processing_timestamp": "2025-07-28T10:53:25.194014+00:00"
   },
   "extracted_sections": [
     {
-      "document": "Dinner Ideas - Sides_1.pdf",
-      "section_title": "Banchan",
+      "document": "South of France - Tips and Tricks.pdf",
+      "section_title": "Introduction",
       "importance_rank": 1,
+      "page_number": 1
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Artistic Heritage",
+      "importance_rank": 2,
+      "page_number": 8
+    },
+    {
+      "document": "South of France - History.pdf",
+      "section_title": "A Historical Journey Through the South of France",
+      "importance_rank": 3,
+      "page_number": 1
+    },
+    {
+      "document": "South of France - Things to Do.pdf",
+      "section_title": "Cooking Classes",
+      "importance_rank": 4,
       "page_number": 5
     },
     {
-      "document": "Breakfast Ideas.pdf",
-      "section_title": "Instructions:",
-      "importance_rank": 2,
-      "page_number": 2
-    },
-    {
-      "document": "Dinner Ideas - Sides_3.pdf",
-      "section_title": "Hummus",
-      "importance_rank": 3,
-      "page_number": 2
-    },
-    {
-      "document": "Dinner Ideas - Sides_2.pdf",
-      "section_title": "Falafel",
-      "importance_rank": 4,
-      "page_number": 7
-    },
-    {
-      "document": "Lunch Ideas.pdf",
-      "section_title": "Cooked rice for serving",
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "where you can learn to prepare traditional dishes like bouillabaisse, ratatouille, and",
       "importance_rank": 5,
-      "page_number": 7
+      "page_number": 6
     }
   ],
   "subsection_analysis": [
     {
-      "document": "Dinner Ideas - Sides_1.pdf",
-      "refined_text": "Banchan \n\u2022 \nIngredients: \no Assorted small side dishes like pickled radish, spinach, bean sprouts, kimchi \n\u2022 \nInstructions: \no Prepare each side dish separately. \no Arrange on small plates. \no Serve as accompaniments to the main meal.",
+      "document": "South of France - Tips and Tricks.pdf",
+      "refined_text": "Introduction \nPlanning a trip to the South of France requires thoughtful preparation to ensure a \ncomfortable and enjoyable experience. This guide covers everything from packing essentials \nto travel tips, catering to all seasons and various activities. Whether you're traveling solo, with \nkids, or in a group, this guide will help you make the most of your trip.",
+      "page_number": 1
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "refined_text": "Artistic Heritage \n\u2022 \nWalking Tour: Take a walking tour of sites related to Paul C\u00e9zanne, such as the Terrain \ndes Peintres and the Bib\u00e9mus Quarry. \n\u2022 \nLocal Markets: Visit the city's famous markets, such as the flower market at Place de \nl'H\u00f4tel de Ville or the food market at Place Richelme.",
+      "page_number": 8
+    },
+    {
+      "document": "South of France - History.pdf",
+      "refined_text": "A Historical Journey Through the South of France",
+      "page_number": 1
+    },
+    {
+      "document": "South of France - Things to Do.pdf",
+      "refined_text": "Cooking Classes \n\u2022 \nProvence: Learn to prepare traditional dishes like ratatouille and bouillabaisse. \n\u2022 \nP\u00e9rigord: Join a tru\ufb04e hunting tour followed by a cooking class. \n\u2022 \nNice: Take a class to master Ni\u00e7oise cuisine, including dishes like salade ni\u00e7oise and \nsocca. \n\u2022 \nToulouse: Learn to cook regional specialties such as cassoulet. \n\u2022 \nMarseille: Participate in a seafood cooking class to make dishes like bouillabaisse. \n\u2022 \nLyon: Discover the secrets of Lyonnaise cuisine with a hands-on cooking class. \n\u2022 \nSarlat: Join a foie gras workshop and learn to prepare this delicacy.",
       "page_number": 5
     },
     {
-      "document": "Breakfast Ideas.pdf",
-      "refined_text": "Instructions: \n\u2022 \nIn a food processor, combine dates, mixed nuts, dried fruit, and honey. \n\u2022 \nProcess until the mixture comes together. \n\u2022 \nPress the mixture into a greased baking dish. \n\u2022 \nRefrigerate for at least 1 hour before cutting into bars. \n\u2022 \nStore in an airtight container.",
-      "page_number": 2
-    },
-    {
-      "document": "Dinner Ideas - Sides_3.pdf",
-      "refined_text": "Hummus \n\u2022 \nIngredients: \no 1 can chickpeas \no 1/4 cup tahini \no 1/4 cup lemon juice \no 2 cloves garlic \no 1/4 cup olive oil \no 1 teaspoon salt \n\u2022 \nInstructions: \no Drain and rinse chickpeas. \no Blend chickpeas, tahini, lemon juice, minced garlic, and salt in a food processor. \no Slowly add olive oil while blending until smooth. \no Serve with a drizzle of olive oil.",
-      "page_number": 2
-    },
-    {
-      "document": "Dinner Ideas - Sides_2.pdf",
-      "refined_text": "Falafel \n\u2022 \nIngredients: \no 1 can chickpeas \no 1 small onion \no 2 cloves garlic \no 1/4 cup parsley \no 1 teaspoon cumin \no 1 teaspoon coriander \no 1 teaspoon salt \no 1/4 cup flour \no Oil for frying \n\u2022 \nInstructions: \no Drain and rinse chickpeas. \no Blend chickpeas, diced onion, minced garlic, chopped parsley, cumin, coriander, \nand salt in a food processor. \no Add flour and mix until combined. \no Form mixture into balls and fry in hot oil until golden. \n\no Drain on paper towels and serve.",
-      "page_number": 7
-    },
-    {
-      "document": "Lunch Ideas.pdf",
-      "refined_text": "Cooked rice for serving",
-      "page_number": 7
+      "document": "South of France - Cuisine.pdf",
+      "refined_text": "where you can learn to prepare traditional dishes like bouillabaisse, ratatouille, and \ntarte trop\u00e9zienne. These classes are a great way to immerse yourself in the local \nculture and gain hands-on experience with regional recipes. Some classes even \ninclude a visit to a local market to shop for fresh ingredients. \n\u2022 \nFood Markets: Visit local markets such as the Cours Saleya Market in Nice or the \nMarch\u00e9 Forville in Cannes to sample fresh produce, cheeses, and charcuterie. These \nmarkets are a feast for the senses, with stalls overflowing with colorful fruits and \nvegetables, fragrant herbs, and artisanal products. Take the time to chat with the \nvendors and learn about the local specialties. \n\u2022 \nWine Tours: The South of France is renowned for its wine regions, including Provence \nand Languedoc. Take a wine tour to visit vineyards, taste local wines, and learn about \nthe winemaking process. Many wineries o\ufb00er guided tours and tastings, giving you the \nopportunity to sample a variety of...",
+      "page_number": 6
     }
   ]
 }
